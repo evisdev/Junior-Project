@@ -2,24 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './TopBar.css';
 
-const TopBar = () => {
+const TopBar = ({ setTime }) => {
+  const handleTimeChange = (e) => {
+    setTime(e.target.value);
+  };
+
   return (
     <div className="content">
       <div className="blog-section">
         <h1>What Is The Best Time To Reach You?</h1>
         <div className="custom-select-wrapper">
-          <select className="time-select" name="time" id="time">
+          <select className="time-select" name="time" id="time" onChange={handleTimeChange}>
             <option value="Choose Your Time">Choose Your Time</option>
-            <option value="morning">8 AM CST</option>
-            <option value="morning">9 AM CST</option>
-            <option value="morning">10 AM CST</option>
-            <option value="morning">11 AM CST</option>
-            <option value="morning">12 PM CST</option>
-            <option value="morning">1 PM CST</option>
-            <option value="morning">2 PM CST</option>
-            <option value="morning">3 PM CST</option>
-            <option value="morning">4 PM CST</option>
-            <option value="morning">5 PM CST</option>
+            <option value="8 AM CST">8 AM CST</option>
+            <option value="9 AM CST">9 AM CST</option>
+            <option value="10 AM CST">10 AM CST</option>
+            <option value="11 AM CST">11 AM CST</option>
+            <option value="12 PM CST">12 PM CST</option>
+            <option value="1 PM CST">1 PM CST</option>
+            <option value="2 PM CST">2 PM CST</option>
+            <option value="3 PM CST">3 PM CST</option>
+            <option value="4 PM CST">4 PM CST</option>
+            <option value="5 PM CST">5 PM CST</option>
           </select>
         </div>
         <p>(All time are in CST)</p>
